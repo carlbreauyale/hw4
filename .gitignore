@@ -1,0 +1,35 @@
+# Course data: never commit the database or product images
+data/campus_customs.db
+data/products/
+*.db
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node / Vite
+node_modules/
+frontend/dist/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Session signing key (backend/auth.py)
+backend/.session_secret
+
+# Chat metrics log (backend/agent.py)
+backend/logs/
+
+# Local AI-assistant settings (not part of the project)
+.claude/
+CLAUDE.md

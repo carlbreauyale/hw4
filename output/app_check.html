@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Customs: App Check (Problem 11)</title>
+    <style>
+      :root {
+        --navy: #00366b;
+        --text: #1d1d1d;
+        --muted: #5f6368;
+        --border: #d9dee5;
+        --pass: #1e7a3c;
+        --pass-bg: #e6f4ea;
+        --amber: #b26a00;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+        color: var(--text);
+        background: #f4f6f9;
+        line-height: 1.55;
+      }
+      header.top {
+        background: linear-gradient(135deg, #001f3f, var(--navy));
+        color: #fff;
+        padding: 2rem 1.5rem 1.6rem;
+      }
+      header.top h1 {
+        margin: 0 0 0.3rem;
+        font-size: 1.9rem;
+        letter-spacing: 0.02em;
+      }
+      header.top p {
+        margin: 0;
+        color: #cfdcec;
+      }
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      .summary {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+      }
+      .summary th,
+      .summary td {
+        text-align: left;
+        padding: 0.6rem 0.8rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .summary th {
+        background: #eef2f7;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+      }
+      .summary tr:last-child td {
+        border-bottom: none;
+      }
+      .pass {
+        display: inline-block;
+        padding: 0.1rem 0.6rem;
+        border-radius: 999px;
+        background: var(--pass-bg);
+        color: var(--pass);
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+      .method {
+        font-size: 0.92rem;
+        color: var(--muted);
+        margin: 0 0 2rem;
+      }
+      section.check {
+        scroll-margin-top: 1rem;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.4rem 1.5rem 1.6rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      section.check h2 {
+        margin: 0 0 0.2rem;
+        color: var(--navy);
+        font-size: 1.45rem;
+      }
+      .check-meta {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .ask {
+        margin: 0 0 1.1rem;
+        padding: 0.7rem 0.9rem;
+        background: #f6f8fb;
+        border-left: 4px solid var(--navy);
+        border-radius: 6px;
+        font-size: 0.95rem;
+      }
+      .ask b {
+        color: var(--navy);
+      }
+      figure {
+        margin: 0 0 1.4rem;
+      }
+      figure a {
+        display: block;
+      }
+      figure img {
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      }
+      figcaption {
+        margin-top: 0.55rem;
+        font-size: 0.97rem;
+      }
+      figcaption strong {
+        color: var(--navy);
+      }
+      table.db {
+        border-collapse: collapse;
+        font-size: 0.9rem;
+        margin: 0.3rem 0 0;
+      }
+      table.db th,
+      table.db td {
+        border: 1px solid var(--border);
+        padding: 0.3rem 0.6rem;
+        text-align: center;
+      }
+      table.db th {
+        background: #eef2f7;
+      }
+      table.db td.left,
+      table.db th.left {
+        text-align: left;
+      }
+      .low {
+        color: var(--amber);
+        font-weight: 700;
+      }
+      .out {
+        color: #b3261e;
+        font-weight: 700;
+      }
+      .ok {
+        color: var(--pass);
+        font-weight: 700;
+      }
+      .why {
+        margin: 0.4rem 0 1rem;
+        font-size: 0.95rem;
+      }
+      footer {
+        max-width: 1100px;
+        margin: 0 auto 2rem;
+        padding: 0 1.5rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      code {
+        background: #eef2f7;
+        padding: 0.05rem 0.35rem;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <h1>Campus Customs: App Check</h1>
+      <p>Problem 11 · Live-site testing with screenshots · captured 2026-10-24 03:33</p>
+    </header>
+
+    <main>
+      <table class="summary">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>What was tested</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><a href="#check-1">Chat checks inventory</a></td>
+            <td>Stock level and price for one size, answered in the chat and compared with the database</td>
+            <td><span class="pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><a href="#check-2">Search-result cards</a></td>
+            <td>"What hoodies do you have?" puts product cards on the page; a card opens its product page</td>
+            <td><span class="pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><a href="#check-3">Problem 9 feature: sold-out → alternatives</a></td>
+            <td>A sold-out size gets in-stock substitutes in that size (<code>find_alternatives</code>, B2)</td>
+            <td><span class="pass">PASS</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="method">
+        <b>How this was tested:</b> on the live, running site (front end <code>http://localhost:5173</code>, FastAPI
+        backend <code>:8000</code>, model <code>gpt-6-astra</code> via Portkey). We drove Microsoft Edge with
+        Playwright like a guest shopper (fresh session, no saved size or chat) and took the screenshots from that
+        browser. Every number in the captions was cross-checked by reading <code>data/campus_customs.db</code> at
+        capture time. Script: <code>tests/app_check.py</code>; raw results: <code>app_check_images/evidence.json</code>.
+        Click any screenshot to open it at full size.
+      </p>
+
+      <!-- ============================ CHECK 1 ============================ -->
+      <section class="check" id="check-1">
+        <h2>Check 1: Chat checks the inventory level of an item</h2>
+        <p class="check-meta">Requirement: honest stock and price from the database · Product: Morse 1 4 Zip</p>
+
+        <p class="ask">
+          <b>Shopper asked (on the product page):</b> "How many of the Morse 1 4 Zip do you have left in size S, and how
+          much is it?"<br />
+          <b>Bulldog Bot replied:</b> "Only 2 left in size S for the Morse 1 4 Zip, and it's $72.00."
+        </p>
+
+        <figure>
+          <a href="app_check_images/inventory_chat.png"><img src="app_check_images/inventory_chat.png" alt="Chat answering: only 2 left in size S for the Morse 1 4 Zip, and it's $72.00" /></a>
+          <figcaption>
+            <strong>The chat answers with the exact stock and price.</strong> The assistant reports
+            <b>only 2 left in size S</b> and <b>$72.00</b>, uses "low stock" wording because 2 is at or below our
+            low-stock line of 3, and links the product name to its page.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a href="app_check_images/inventory_board.png"><img src="app_check_images/inventory_board.png" alt="Morse 1 4 Zip product page: $72.00, S 2 left, L benched, LED stock board 15/02/08/OUT/25/02" /></a>
+          <figcaption>
+            <strong>The product page shows the same numbers.</strong> The price tag reads <b>$72.00</b>, the S
+            jersey says <b>"2 LEFT"</b> and the LED stock board shows <b>S = 02</b>, so the chat and the page agree
+            with each other and with the database below.
+          </figcaption>
+        </figure>
+
+        <p class="why"><b>Database check</b> (<code>catalogue.price</code>, <code>inventory.quantity</code> for <code>morse-1-4-zip</code>):</p>
+        <table class="db">
+          <tr><th class="left">Price</th><th>XS</th><th>S</th><th>M</th><th>L</th><th>XL</th><th>XXL</th></tr>
+          <tr>
+            <td class="left">$72.00</td>
+            <td class="ok">15</td>
+            <td class="low">2 ← asked</td>
+            <td class="ok">8</td>
+            <td class="out">0</td>
+            <td class="ok">25</td>
+            <td class="low">2</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- ============================ CHECK 2 ============================ -->
+      <section class="check" id="check-2">
+        <h2>Check 2: Dynamic search-result cards after a category question</h2>
+        <p class="check-meta">Requirement: the agent returns structured product matches and the page renders them as cards</p>
+
+        <p class="ask">
+          <b>Shopper asked (on the home page):</b> "What hoodies do you have?"<br />
+          <b>Bulldog Bot replied:</b> "We have 12 hoodie options shown on the page, including Basic Hoodie Big Yale,
+          Champion Full Zip Hood, and sport-specific favorites. What size are you looking for?"
+        </p>
+
+        <figure>
+          <a href="app_check_images/hoodie_cards.png"><img src="app_check_images/hoodie_cards.png" alt="Results shelf titled Hoodies with 12 product cards, next to the chat reply" /></a>
+          <figcaption>
+            <strong>The answer appears on the page as product cards.</strong> The results shelf titled
+            <b>"HOODIES 12"</b> ("From your chat: 'What hoodies do you have?'") shows image, type, name, short
+            description and price cards for <b>12 hoodies</b>, with a "See all Hoodies" link, and the chat points to
+            them ("12 items shown on the page ↑").
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a href="app_check_images/hoodie_card_detail.png"><img src="app_check_images/hoodie_card_detail.png" alt="Clicking a card opened the Brooks Brothers Double Knit Full Zip Hoodie Yale product page" /></a>
+          <figcaption>
+            <strong>A card the chat added still opens the single-item page.</strong> Clicking the second card opened
+            <b>Brooks Brothers Double Knit Full Zip Hoodie Yale</b>
+            (<code>/products/brooks-brothers-double-knit-full-zip-hoodie-yale</code>): large image on one side; type,
+            name, <b>$88.00</b>, description, colors, sizes and stock on the other.
+          </figcaption>
+        </figure>
+
+        <p class="why"><b>Database check:</b> all 12 card prices match <code>catalogue.price</code>:</p>
+        <table class="db">
+          <tr><th class="left">Card (in shelf order)</th><th>Card price</th><th>DB price</th></tr>
+          <tr><td class="left">Basic Hoodie Big Yale</td><td>$68.00</td><td class="ok">68.00</td></tr>
+          <tr><td class="left">Brooks Brothers Double Knit Full Zip Hoodie Yale</td><td>$88.00</td><td class="ok">88.00</td></tr>
+          <tr><td class="left">Champion Full Zip Hood</td><td>$88.00</td><td class="ok">88.00</td></tr>
+          <tr><td class="left">Champion Reverse Weave Hoodie 1</td><td>$68.00</td><td class="ok">68.00</td></tr>
+          <tr><td class="left">Crew Left Chest Hoodie</td><td>$68.00</td><td class="ok">68.00</td></tr>
+          <tr><td class="left">District Vit Hoodie Vintage Bulldog</td><td>$68.00</td><td class="ok">68.00</td></tr>
+          <tr><td class="left">District Vit Hoodie Vintage Sailor Bulldog</td><td>$68.00</td><td class="ok">68.00</td></tr>
+          <tr><td class="left">Fencing Left Chest Hoodie</td><td>$68.00</td><td class="ok">68.00</td></tr>
+          <tr><td class="left">Ice Hockey Left Chest Hoodie</td><td>$68.00</td><td class="ok">68.00</td></tr>
+          <tr><td class="left">Sailing Left Chest Hoodie</td><td>$68.00</td><td class="ok">68.00</td></tr>
+          <tr><td class="left">Squash Left Chest Hoodie</td><td>$68.00</td><td class="ok">68.00</td></tr>
+          <tr><td class="left">The Forest School Hoodie</td><td>$68.00</td><td class="ok">68.00</td></tr>
+        </table>
+      </section>
+
+      <!-- ============================ CHECK 3 ============================ -->
+      <section class="check" id="check-3">
+        <h2>Check 3: Problem 9 usability feature, sold-out size → in-stock alternatives (B2)</h2>
+        <p class="check-meta">
+          Why this feature: a sold-out size is the moment a shopper is most likely to leave. <code>find_alternatives</code>
+          turns that "no" into in-stock options in their size, so it has the most direct effect on sales.
+        </p>
+
+        <p class="ask">
+          <b>Shopper picked size XL on the Baseball Left Chest Crewneck page and asked:</b> "Is this available in XL?"<br />
+          <b>Bulldog Bot replied:</b> "Sorry, XL is sold out in Baseball Left Chest Crewneck; S, M, L and XXL are
+          available. The options on the page are available in XL: Yale Sports Crewneck Baseball shares the baseball
+          theme and crewneck style, Tri Blend Sports Baseball T Shirt shares the baseball theme, and Hype And Vice
+          Yale University Offside Crewneck is another crewneck in navy and white."
+        </p>
+
+        <figure>
+          <a href="app_check_images/alternatives.png"><img src="app_check_images/alternatives.png" alt="Chat says XL is sold out and suggests three alternatives in XL; shelf titled Alternatives in XL shows them" /></a>
+          <figcaption>
+            <strong>"Sold out" comes with substitutes the shopper can buy.</strong> The bot says XL is sold out,
+            lists the sizes in stock, and suggests three similar items with reasons (same baseball theme, crewneck
+            style). They appear as cards under <b>"ALTERNATIVES IN XL"</b>, and every product name in the reply is a
+            clickable link (Problem 9's F4 at work too).
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a href="app_check_images/alternatives_benched.png"><img src="app_check_images/alternatives_benched.png" alt="Baseball Left Chest Crewneck page: XL jersey benched, LED board XL OUT" /></a>
+          <figcaption>
+            <strong>The product page confirms XL really is sold out.</strong> The XL jersey is <b>"BENCHED"</b>, the
+            status reads "Sold out", and the LED board shows <b>XL = OUT</b> (XS is also out). This matches what the
+            bot said.
+          </figcaption>
+        </figure>
+
+        <p class="why"><b>Database check:</b> the original is out in XL, and every suggested substitute has XL in stock:</p>
+        <table class="db">
+          <tr><th class="left">Item</th><th>Role</th><th>XL in stock (DB)</th></tr>
+          <tr><td class="left">Baseball Left Chest Crewneck</td><td>requested item</td><td class="out">0 (sold out)</td></tr>
+          <tr><td class="left">Yale Sports Crewneck Baseball</td><td>substitute</td><td class="ok">12</td></tr>
+          <tr><td class="left">Tri Blend Sports Baseball T Shirt</td><td>substitute</td><td class="ok">25</td></tr>
+          <tr><td class="left">Hype And Vice Yale University Offside Crewneck</td><td>substitute</td><td class="ok">20</td></tr>
+        </table>
+        <p class="why" style="margin-top: 0.6rem">
+          Full stock of the requested item: XS 0 · S 15 · M 5 · L 25 · <b>XL 0</b> · XXL 25. The bot's "S, M, L and
+          XXL are available" is exactly right.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Re-run these checks (both servers running, from the HW4 folder): <code>python tests/app_check.py</code>. It
+      re-captures every screenshot and rewrites <code>app_check_images/evidence.json</code>. Chat replies are
+      generated by the model and may be worded slightly differently on each run; the stock and price facts come
+      from the database.
+    </footer>
+
+    <script>
+      // In-page links (#check-1 …): scroll with JavaScript as well, because some embedded
+      // viewers (e.g. preview panes) ignore plain "#anchor" jumps. Normal browsers work either way.
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          var target = document.getElementById(link.getAttribute('href').slice(1))
+          if (!target) return
+          event.preventDefault()
+          target.scrollIntoView({ block: 'start' })
+          target.setAttribute('tabindex', '-1')
+          target.focus({ preventScroll: true })
+        })
+      })
+    </script>
+  </body>
+</html>

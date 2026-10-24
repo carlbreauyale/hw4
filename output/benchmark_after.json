@@ -1,0 +1,98 @@
+[
+  {
+    "name": "price",
+    "message": "How much is the Basic Hoodie Big Yale?",
+    "seconds": 4.41,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 5343.0,
+    "cached_tokens": 2545.5,
+    "output_tokens": 72.0,
+    "products": 1.0,
+    "sample_reply": "The Basic Hoodie Big Yale is $68.00."
+  },
+  {
+    "name": "browse",
+    "message": "What hoodies do you have?",
+    "seconds": 5.87,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 6008.0,
+    "cached_tokens": 5376.0,
+    "output_tokens": 213.5,
+    "products": 12.0,
+    "sample_reply": "We\u2019ve got 12 hoodie options on the page, including Basic Hoodie Big Yale, Champion Full Zip Hood, and sport-specific styles. What size are you shopping for?"
+  },
+  {
+    "name": "stock",
+    "message": "Is the Baseball Left Chest Crewneck available in XL?",
+    "seconds": 5.41,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 5736.0,
+    "cached_tokens": 5240.0,
+    "output_tokens": 151.0,
+    "products": 3.0,
+    "sample_reply": "Sorry, Baseball Left Chest Crewneck is sold out in XL; S, M, L, and XXL are available. Two alternatives available in XL are on the page: Yale Sports Crewneck Baseball keeps the same baseball theme and crewneck style, while Tri Blend Sports Baseball T Shirt offers the same baseball theme in a tee."
+  },
+  {
+    "name": "filtered list",
+    "message": "navy hoodies in size M",
+    "seconds": 5.13,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 6026.0,
+    "cached_tokens": 5385.0,
+    "output_tokens": 205.0,
+    "products": 12.0,
+    "sample_reply": "Found 12 navy hoodies available in size M\u2014check out the options on the page."
+  },
+  {
+    "name": "sold out \u2192 similar",
+    "message": "I need the Crew Left Chest Hoodie in M, what can I get instead?",
+    "seconds": 5.68,
+    "requests": 3.0,
+    "tool_calls": 2.0,
+    "input_tokens": 8948.0,
+    "cached_tokens": 7827.0,
+    "output_tokens": 180.0,
+    "products": 4.0,
+    "sample_reply": "Sorry, Crew Left Chest Hoodie is sold out in M; XS, S, L, XL and XXL are available. The three alternatives shown on the page are all available in M, with the same hoodie style, shared navy blue color and similar pricing."
+  },
+  {
+    "name": "this (product page)",
+    "message": "Do you have this in large?",
+    "seconds": 4.88,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 5931.0,
+    "cached_tokens": 2839.5,
+    "output_tokens": 189.0,
+    "products": 4.0,
+    "sample_reply": "Sorry, Morse 1 4 Zip is sold out in large. XS, S, M, XL and XXL are available, with only 2 left each in S and XXL. I've shown large-size alternatives on the page: Morse Logo T Shirt keeps the Morse theme, while Benjamin Franklin 1 4 Zip and Berkeley 1 4 Zip offer the same quarter-zip style and shared colors."
+  },
+  {
+    "name": "long history follow-up",
+    "message": "And what about in large?",
+    "seconds": 3.31,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 6168.0,
+    "cached_tokens": 5456.0,
+    "output_tokens": 76.0,
+    "products": 1.0,
+    "sample_reply": "Yes, the Basic Hoodie Big Yale is available in large (L)."
+  },
+  {
+    "name": "policy",
+    "message": "What's your return policy?",
+    "seconds": 1.67,
+    "requests": 1.0,
+    "tool_calls": 0.0,
+    "input_tokens": 2633.0,
+    "cached_tokens": 2498.0,
+    "output_tokens": 110.0,
+    "products": 0.0,
+    "sample_reply": "Returns are accepted within 30 days of shipping for unworn items with tags; custom items (such as alumni items) and final-sale items can\u2019t be returned. You pay return shipping unless we made an error. Refunds exclude original shipping charges and take 2\u201310 business days. For return help, contact orderdept@campuscustoms.com or (475) 301-4205."
+  }
+]

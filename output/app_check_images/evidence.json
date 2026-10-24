@@ -1,0 +1,178 @@
+{
+  "site": "http://localhost:5173",
+  "captured_at": "2026-10-24 03:33",
+  "inventory": {
+    "product_id": "morse-1-4-zip",
+    "question": "How many of the Morse 1 4 Zip do you have left in size S, and how much is it?",
+    "reply": "Only 2 left in size S for the Morse 1 4 Zip, and it\u2019s $72.00.",
+    "seconds": 0.9,
+    "db_price": 72.0,
+    "db_stock": {
+      "XS": 15,
+      "S": 2,
+      "M": 8,
+      "L": 0,
+      "XL": 25,
+      "XXL": 2
+    },
+    "images": [
+      "app_check_images/inventory_chat.png",
+      "app_check_images/inventory_board.png"
+    ]
+  },
+  "cards": {
+    "question": "What hoodies do you have?",
+    "reply": "We have 12 hoodie options shown on the page, including Basic Hoodie Big Yale, Champion Full Zip Hood, and sport-specific favorites. What size are you looking for?",
+    "seconds": 0.9,
+    "shelf_title": "Hoodies\n12",
+    "cards": [
+      [
+        "Basic Hoodie Big Yale",
+        "$68.00"
+      ],
+      [
+        "Brooks Brothers Double Knit Full Zip Hoodie Yale",
+        "$88.00"
+      ],
+      [
+        "Champion Full Zip Hood",
+        "$88.00"
+      ],
+      [
+        "Champion Reverse Weave Hoodie 1",
+        "$68.00"
+      ],
+      [
+        "Crew Left Chest Hoodie",
+        "$68.00"
+      ],
+      [
+        "District Vit Hoodie Vintage Bulldog",
+        "$68.00"
+      ],
+      [
+        "District Vit Hoodie Vintage Sailor Bulldog",
+        "$68.00"
+      ],
+      [
+        "Fencing Left Chest Hoodie",
+        "$68.00"
+      ],
+      [
+        "Ice Hockey Left Chest Hoodie",
+        "$68.00"
+      ],
+      [
+        "Sailing Left Chest Hoodie",
+        "$68.00"
+      ],
+      [
+        "Squash Left Chest Hoodie",
+        "$68.00"
+      ],
+      [
+        "The Forest School Hoodie",
+        "$68.00"
+      ]
+    ],
+    "db_cards": [
+      [
+        "Basic Hoodie Big Yale",
+        68.0,
+        "pullover hoodie"
+      ],
+      [
+        "Brooks Brothers Double Knit Full Zip Hoodie Yale",
+        88.0,
+        "full-zip hooded sweatshirt"
+      ],
+      [
+        "Champion Full Zip Hood",
+        88.0,
+        "full-zip hooded sweatshirt"
+      ],
+      [
+        "Champion Reverse Weave Hoodie 1",
+        68.0,
+        "hoodie"
+      ],
+      [
+        "Crew Left Chest Hoodie",
+        68.0,
+        "pullover hoodie"
+      ],
+      [
+        "District Vit Hoodie Vintage Bulldog",
+        68.0,
+        "pullover hoodie"
+      ],
+      [
+        "District Vit Hoodie Vintage Sailor Bulldog",
+        68.0,
+        "pullover hoodie"
+      ],
+      [
+        "Fencing Left Chest Hoodie",
+        68.0,
+        "pullover hoodie"
+      ],
+      [
+        "Ice Hockey Left Chest Hoodie",
+        68.0,
+        "pullover hoodie"
+      ],
+      [
+        "Sailing Left Chest Hoodie",
+        68.0,
+        "pullover hoodie"
+      ],
+      [
+        "Squash Left Chest Hoodie",
+        68.0,
+        "pullover hoodie"
+      ],
+      [
+        "The Forest School Hoodie",
+        68.0,
+        "hoodie"
+      ]
+    ],
+    "clicked_card": "Brooks Brothers Double Knit Full Zip Hoodie Yale",
+    "opened_page": "Brooks Brothers Double Knit Full Zip Hoodie Yale",
+    "url": "http://localhost:5173/products/brooks-brothers-double-knit-full-zip-hoodie-yale",
+    "images": [
+      "app_check_images/hoodie_cards.png",
+      "app_check_images/hoodie_card_detail.png"
+    ]
+  },
+  "alternatives": {
+    "product_id": "baseball-left-chest-crewneck",
+    "question": "Is this available in XL?",
+    "reply": "Sorry, XL is sold out in Baseball Left Chest Crewneck; S, M, L and XXL are available. The options on the page are available in XL: Yale Sports Crewneck Baseball shares the baseball theme and crewneck style, Tri Blend Sports Baseball T Shirt shares the baseball theme, and Hype And Vice Yale University Offside Crewneck is another crewneck in navy and white.",
+    "seconds": 0.9,
+    "db_stock": {
+      "XS": 0,
+      "S": 15,
+      "M": 5,
+      "L": 25,
+      "XL": 0,
+      "XXL": 25
+    },
+    "shelf_cards": [
+      "Baseball Left Chest Crewneck",
+      "Yale Sports Crewneck Baseball",
+      "Tri Blend Sports Baseball T Shirt",
+      "Hype And Vice Yale University Offside Crewneck"
+    ],
+    "shelf_cards_xl_stock": {
+      "Baseball Left Chest Crewneck": 0,
+      "Yale Sports Crewneck Baseball": 12,
+      "Tri Blend Sports Baseball T Shirt": 25,
+      "Hype And Vice Yale University Offside Crewneck": 20
+    },
+    "images": [
+      "app_check_images/alternatives.png",
+      "app_check_images/alternatives_benched.png"
+    ]
+  }
+}

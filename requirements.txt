@@ -1,0 +1,11 @@
+# Backend (FastAPI + PydanticAI agent). Install from the hw4 folder:
+#   pip install -r requirements.txt
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.13
+pydantic-ai>=2.49.0
+openai>=3.19.0
+python-dotenv>=1.2
+
+# Optional, only for tests/app_check.py (live-site screenshots; uses the installed Microsoft Edge):
+# playwright>=1.50

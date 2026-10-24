@@ -1,0 +1,98 @@
+[
+  {
+    "name": "price",
+    "message": "How much is the Basic Hoodie Big Yale?",
+    "seconds": 0.62,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 7537.0,
+    "cached_tokens": 3608.0,
+    "output_tokens": 74.0,
+    "products": 1.0,
+    "sample_reply": "The Basic Hoodie Big Yale is $68.00."
+  },
+  {
+    "name": "browse",
+    "message": "What hoodies do you have?",
+    "seconds": 6.56,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 8202.0,
+    "cached_tokens": 7570.0,
+    "output_tokens": 226.5,
+    "products": 12.0,
+    "sample_reply": "I found 12 hoodies, including the Basic Hoodie Big Yale, full-zip options from Champion and Brooks Brothers, and Yale sports styles. They're on the page for you to browse\u2014what size or color are you looking for?"
+  },
+  {
+    "name": "stock",
+    "message": "Is the Baseball Left Chest Crewneck available in XL?",
+    "seconds": 6.18,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 7689.0,
+    "cached_tokens": 7313.5,
+    "output_tokens": 98.0,
+    "products": 1.0,
+    "sample_reply": "Sorry, the Baseball Left Chest Crewneck is sold out in XL. It\u2019s available in S, M, L and XXL."
+  },
+  {
+    "name": "filtered list",
+    "message": "navy hoodies in size M",
+    "seconds": 4.95,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 8214.0,
+    "cached_tokens": 7576.0,
+    "output_tokens": 216.0,
+    "products": 12.0,
+    "sample_reply": "I found 12 navy hoodies available in size M\u2014they\u2019re shown on the page. Options include the Basic Hoodie Big Yale and the Brooks Brothers Double Knit Full Zip Hoodie Yale."
+  },
+  {
+    "name": "sold out \u2192 similar",
+    "message": "I need the Crew Left Chest Hoodie in M, what can I get instead?",
+    "seconds": 8.24,
+    "requests": 2.0,
+    "tool_calls": 2.0,
+    "input_tokens": 8469.0,
+    "cached_tokens": 7703.5,
+    "output_tokens": 347.5,
+    "products": 12.0,
+    "sample_reply": "Sorry, the Crew Left Chest Hoodie is sold out in M. The Basic Hoodie Big Yale and Champion Reverse Weave Hoodie 1 are available in M, along with the other alternatives shown on the page. If a different sport works, the Sailing Left Chest Hoodie is also available in M\u2014or do you want to stick with Crew gear?"
+  },
+  {
+    "name": "this (product page)",
+    "message": "Do you have this in large?",
+    "seconds": 4.75,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 7859.0,
+    "cached_tokens": 1846.0,
+    "output_tokens": 122.0,
+    "products": 1.0,
+    "sample_reply": "Sorry, large is sold out in the Morse 1 4 Zip. XS, M and XL are available, with only 2 left each in S and XXL. Want me to find a similar quarter-zip in large?"
+  },
+  {
+    "name": "long history follow-up",
+    "message": "And what about in large?",
+    "seconds": 3.75,
+    "requests": 2.0,
+    "tool_calls": 1.0,
+    "input_tokens": 8796.0,
+    "cached_tokens": 7777.0,
+    "output_tokens": 79.0,
+    "products": 1.0,
+    "sample_reply": "Yes, the Basic Hoodie Big Yale is available in large."
+  },
+  {
+    "name": "policy",
+    "message": "What's your return policy?",
+    "seconds": 7.88,
+    "requests": 1.0,
+    "tool_calls": 0.0,
+    "input_tokens": 3730.0,
+    "cached_tokens": 3599.5,
+    "output_tokens": 112.0,
+    "products": 0.0,
+    "sample_reply": "Returns are accepted within 30 days of the shipping date for items that are unworn with tags attached; custom-made and final-sale items can\u2019t be returned. You pay return shipping unless we made a mistake, and refunds exclude the original shipping cost and take 2\u201310 business days to appear. For help with a return, contact orderdept@campuscustoms.com or (475) 301-4205."
+  }
+]
