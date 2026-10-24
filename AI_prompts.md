@@ -198,3 +198,9 @@ Starting Problem 13: Push to GitHub and submit the URL
 [3 screenshots of the expected file layout: hw4/ with AI_prompts.md, requirements.txt, .env.example, .gitignore, README.md, frontend/ (Vite React TypeScript app), backend/ (main.py: FastAPI app, run with: uvicorn main:app --reload --port 8000; agent.py; models.py; tools.py; prompts/prompt.md), output/ (harness.md, design.md, usability.md, app_check.html, app_check_images/ screenshots linked from app_check.html, audit_trail.json); and a local-only data pack: data/ with campus_customs.db and products/ (images referenced by the catalogue)]
 
 The code should already be in a folder called hw4, and push it to a public GitHub repository. Please give me the repo URL (the link graders can open and clone), which I will upload to the class platform called Canvas. We do not upload a zip for this homework. Do not put the real .env, campus_customs.db or product images in the GitHub repo. Use .gitignore. Include .env.example with placeholders only. See the expected file layout in the screen shot. I take two screenshots so you can see all text to the right. Local-only data pack (not in git) - see third screeshot starting with data/   The agent itself is four files under backend/: prompts/prompt.md, agent.py, tools.py and models.py. README.md should explain how to run the front end and back end after placing the data pack.
+
+Can I open the website from the github page
+
+So graders will clone it and will be able to see the website locally, correct
+
+push the latest changes
